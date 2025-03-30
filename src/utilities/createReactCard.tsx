@@ -52,8 +52,16 @@ const createReactCard = (
 
 		// The user supplied configuration. Throw an exception and Home Assistant
 		// will render an error card.
-		setConfig(config: unknown) {
+		setConfig(config: {zone:string}) {
+			if (!config.zone) {
+				throw new Error('Please specify a zone!');
+			}
 			signals.config.value = config;
+
+		}
+
+		static getStubConfig() {
+			return { zone: "zone.home" }
 		}
 
 		configChanged(newConfig: unknown) {

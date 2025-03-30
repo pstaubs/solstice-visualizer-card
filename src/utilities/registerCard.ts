@@ -18,5 +18,13 @@ export default function registerCard(
 
 	const ReactNode = createReactCard(component, cardStates.value[cardName]);
 	customElements.define(cardName, ReactNode);
-	console.info("Registered:", cardName);
+
+	(window as any).customCards = (window as any).customCards || [];
+	(window as any).customCards.push({
+		type: cardName,
+		name: "Solstice Visualizer",
+		description: "A simple, custom card that graphically shows the yearly daytime in relation to the nearest solstice and equinox." // optional
+	});
+
+	//console.info("Registered:", cardName);
 }

@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import React, { useRef } from "react";
 import { ReactCardProps } from "./utilities/createReactCard";
-import StateViewer from "./components/StateViewer";
-import ConfigViewer from "./components/ConfigViewer";
+import Visualizer from "./components/Visualizer";
+import './index.css';
+
 
 declare global {
 	namespace JSX {
@@ -15,16 +16,17 @@ declare global {
 	}
 }
 
-function App({ cardName }: ReactCardProps) {
+function App({ config, hass }: ReactCardProps) {
 	const renderRef = useRef(0);
 	renderRef.current++;
 
+	var data
+	try{ data = (hass.value as any).states[(config.value as any)?.zone] }
+	catch{ data = null}
+
 	return (
 		<ha-card style={{ padding: "1rem" }}>
-			<p>{cardName}</p>
-			<p>Rendered: {renderRef.current}</p>
-			<StateViewer cardName={cardName} />
-			<ConfigViewer cardName={cardName} />
+			{data!=null && <Visualizer lat={data.attributes.latitude} lng={data.attributes.longitude}/>}
 		</ha-card>
 	);
 }

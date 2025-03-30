@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Solstice Vizualizer</title>
+		<script type="module" defer="defer" src="src/main.tsx"></script>
+		<script>
+			window.onload = ()=>{
+				document.getElementById('test').setConfig({
+					type: "custom:solstice-visualizer-card",
+					zone: "zone.home"
+				})
+				document.getElementById('test').hass = {
+					states: {
+						"zone.home": {
+							attributes: {
+								editable: true,
+								friendly_name: "Home",
+								icon: "mdi:home",
+								latitude: 5,
+								longitude: 0
+							},
+							entity_id: "zone.home",
+							state: "2",
+							last_changed: "2025-04-07T00:14:41.505Z",
+						}
+					}
+				}
+				document.getElementById('test2').setConfig({
+					type: "custom:solstice-visualizer-card",
+					zone: "zone.home"
+				})
+				document.getElementById('test2').hass = {
+					states: {
+						"zone.home": {
+							attributes: {
+								editable: true,
+								friendly_name: "Home",
+								icon: "mdi:home",
+								latitude: 60,
+								longitude: 0
+							},
+							entity_id: "zone.home",
+							state: "2",
+							last_changed: "2025-04-07T00:14:41.505Z",
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<div style="--column-size:12; width: 344px" class="card ">
+			<solstice-visualizer-card id="test"/>
+		</div>
+		<div style="--column-size:12; width: 344px" class="card ">
+			<solstice-visualizer-card id="test2"/>
+		</div>
+	</body>
+</html>

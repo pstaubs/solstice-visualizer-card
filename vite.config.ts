@@ -4,8 +4,13 @@ import react from "@vitejs/plugin-react-swc";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	base: "/local",
+	base: "",
 	plugins: [react()],
+	server: {
+		watch: {
+			usePolling: true
+		}
+	},
 	build: {
 		sourcemap: "inline",
 		minify: false,
