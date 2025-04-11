@@ -1,6 +1,8 @@
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge)](https://github.com/hacs/integration)
+
 # Solstice Visualizer Card
 
-A simple, custom [Home Assistant Dashboard Card](https://www.home-assistant.io/dashboards/), that graphically shows the yearly daytime in relation to the nearest solstice and equinox. Inspired heavily by https://github.com/rejuvenate/lovelace-horizon-card. Hover over the graph to read out the expected amount of daylight hours for that day.
+A simple, custom [Home Assistant Dashboard Card](https://www.home-assistant.io/dashboards/), that graphically shows the daily amount on daylight in relation to the nearest solstice and equinox. Inspired heavily by https://github.com/rejuvenate/lovelace-horizon-card. Hover over the graph to read out the expected amount of daylight hours for thany given day.
 
 ![Screenshot 2025-04-08 203328](https://github.com/user-attachments/assets/b4f5879c-d3ae-4bb7-a889-6020ce5d640f)
 
